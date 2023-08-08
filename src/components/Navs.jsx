@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+/* Here array of object is created in LINKS. content text and path(to) this is used for navigation purpose. VERY HelpFul */
+
 const LINKS = [
   {
     text: "Home",
