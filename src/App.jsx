@@ -1,14 +1,19 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Starred from "./pages/Starred";
+import MainLayout from "./components/MainLayout";
 /* Single page means single html. In react because of js we navigation through pages without load. */
+/* Mainlayout is linked with app.jsx */
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Routes means pages. navigation occur without loading pages.  */}
-        <Route path="/" element={<Home />} />
-        <Route path="/starred" element={<Starred />} />
+        {/* Routes means pages. navigation occur without loading pages. below there is single attribut - element with MainLayout prop  */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/starred" element={<Starred />} />
+        </Route>
+
         <Route path="*" element={<div>Not Found</div>} />
 
         {/*      <Route path="/" element={<App />}>
