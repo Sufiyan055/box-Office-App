@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { searchForShows } from "./../api/tvmaze";
+import { useState } from 'react';
+import { searchForShows } from './../api/tvmaze';
 
 const Home = () => {
-  const [searchStr, setSearchStr] = useState("");
+  const [searchStr, setSearchStr] = useState('');
   //apidata rendered by searching in setApiData initially it is null create a function to deal with this
   const [apiData, setApiData] = useState(null);
   //Error handling usestate
@@ -10,13 +10,13 @@ const Home = () => {
 
   //console.log(searchStr);
   /* Here i learn about data binding 1 way and 2 way */
-  const onSearchInputChange = (ev) => {
+  const onSearchInputChange = ev => {
     setSearchStr(ev.target.value);
   };
 
-  const onSearch = async (ev) => {
+  const onSearch = async ev => {
     ev.preventDefault();
-
+    //rerender
     try {
       setApiDataError(null);
       const result = await searchForShows(searchStr);
@@ -33,7 +33,7 @@ const Home = () => {
     }
 
     if (apiData) {
-      return apiData.map((data) => (
+      return apiData.map(data => (
         <div key={data.show.id}>{data.show.name}</div>
       ));
     }
