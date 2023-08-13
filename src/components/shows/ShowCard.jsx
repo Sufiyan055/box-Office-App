@@ -1,5 +1,3 @@
-import { Link } from 'react-router-dom';
-
 const ShowCard = ({ name, image, id, summary }) => {
   // below => shoring the full description by using split,slice, join and replace methods.
   const summaryStripped = summary
@@ -15,7 +13,9 @@ const ShowCard = ({ name, image, id, summary }) => {
       <p>{summaryStripped}</p>
 
       <div>
-        <Link to={`/show/${id}`}>Read More</Link>
+        <a href={`/show/${id}`} target="_blank" rel="noreferrer">
+          Read more
+        </a>
         <button type="button">Star me</button>
       </div>
     </div>
