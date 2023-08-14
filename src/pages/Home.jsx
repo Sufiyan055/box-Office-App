@@ -5,6 +5,8 @@ import SearchForm from '../components/SearchForm';
 import ShowGrid from '../components/shows/ShowGrid';
 import ActorsGrid from '../components/actors/ActorsGrid';
 
+// useReducer is the alternative of useState not a replacement.
+
 const Home = () => {
   const [filter, setFilter] = useState(null);
 
